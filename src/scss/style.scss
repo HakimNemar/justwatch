@@ -1,0 +1,11 @@
+@import "./utils/variables.scss";
+
+body {
+    color: $text;
+    background-color: $primary;
+}
+
+@import "../Components/Header/Header.scss";
+
+// @import "../Components/Pages/Home/Home.scss";
+// @import "../Components/Pages/New/New.scss";
