@@ -16,6 +16,12 @@ body {
         text-decoration: none;
         color: inherit;
     }
+
+    button {
+        border: none;
+        font-family: inherit;
+        color: inherit;
+    }
 }
 
 @import "../Components/Header/Header.scss";
