@@ -25,9 +25,8 @@
             font-size: 60px;
             line-height: 70px;
             width: 50%;
-            // margin: 30px auto 0 auto;
             margin: auto auto 0 auto;
-            color: #fff;
+            color: $white;
             align-self: end;
         }
 
@@ -60,6 +59,10 @@
             &-second {
                 background-color: transparent;
                 border: 1px solid $text;
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.05);
+                }
             }
         }
 

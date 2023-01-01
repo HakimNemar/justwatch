@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom';
-import Providers from './DataProviders';
+import DataHome from '../Data/DataHome';
 
 export default function Intro() {
     return (
@@ -16,7 +16,7 @@ export default function Intro() {
                     <p>Services de streaming sur JustWatch</p>
                     <ul>
                         {
-                            Providers.map((provider, key) => {
+                            DataHome.providers.map((provider, key) => {
                                 return (
                                     <li key={key}>
                                         <Link to="/new"><img src={provider.image} alt={provider.name} /></Link>
