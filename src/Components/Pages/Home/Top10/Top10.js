@@ -12,7 +12,14 @@ export default function Top10() {
             <RowMoviesTv
                 title="Top 10 des films de la semaine"
                 text="Découvrez les films les plus populaires de la semaine et où les regarder."
-                fetchUrl={Requests.fetchTopRatedMovies} />
+                fetchUrl={Requests.fetchTopRatedMovies}
+                withIndex={true} />
+
+            <RowMoviesTv
+                title="Top 10 des séries de la semaine"
+                text="Découvrez les séries les plus populaires de la semaine et où les regarder en streaming."
+                fetchUrl={Requests.fetchTopRatedTv}
+                withIndex={true} />
 
         </section>
     )
