@@ -1,48 +1,37 @@
 import React, { useState, useEffect, useRef } from 'react';
-import axios from 'axios';
 
-export default function RowMoviesTv({ title, text, fetchUrl, withIndex }) {
-    const [movies, setMovies] = useState([]),
-        [index, setIndex] = useState(0),
+export default function RowMoviesTv({ title, text, withIndex, moviesData }) {
+    const [index, setIndex] = useState(0),
         currentSlide = useRef(null),
         currentSlideLi = useRef(null),
         slideLi = document.querySelector(".slide li"),
         nbrLiForDesktop = withIndex ? 3 : 5;
 
     useEffect(() => {
-        async function fetchData() {
-            const request = await axios.get(fetchUrl);
-            setMovies(request.data.results.slice(0, 10));
-        }
-
-        fetchData();
-    }, [fetchUrl]);
-
-    useEffect(() => {
         if (currentSlideLi) {
-            if (index < movies.length) {
-                console.log(index);
+            if (index < moviesData.length) {
                 currentSlide.current.style.transform = `translateX(${(-currentSlideLi.current.clientWidth) * index}px)`;
             }
         }
-    }, [index, movies.length, slideLi]);
+    }, [index, moviesData.length, slideLi]);
 
-    const styleNumbreLi = {
+    const styleNumberLi = {
         flex: withIndex ? `0 0 ${100 / (nbrLiForDesktop)}%` : `0 0 ${100 / (nbrLiForDesktop + 1)}%`,
         padding: withIndex ? '0 0px' : '0 20px'
     }
 
     return (
-        <div className='rowMoviesTv'>
+        <div className='row-movies-tv'>
             <div className='description'>
                 <h2>{title}</h2>
                 <p>{text}</p>
             </div>
+
             <div className='carousel'>
                 <ul className='slide' ref={currentSlide}>
-                    {movies.map((movie, key) => {
+                    {moviesData.map((movie, key) => {
                         return (
-                            <li key={key} style={styleNumbreLi} ref={currentSlideLi}>
+                            <li key={key} style={styleNumberLi} ref={currentSlideLi}>
                                 {withIndex &&
                                     <p>{key + 1}</p>
                                 }
@@ -51,9 +40,10 @@ export default function RowMoviesTv({ title, text, fetchUrl, withIndex }) {
                         )
                     })}
                 </ul>
+
                 {/* <button className='prev' onClick={() => (index > (0 + (nbrLiForDesktop - 1)) && setIndex(index - nbrLiForDesktop))}></button> */}
                 <button className='prev' onClick={() => (index > 0 && setIndex(index - nbrLiForDesktop))}></button>
-                <button className='next' onClick={() => (index < (movies.length - nbrLiForDesktop) && setIndex(index + nbrLiForDesktop))}></button>
+                <button className='next' onClick={() => (index < (moviesData.length - nbrLiForDesktop) && setIndex(index + nbrLiForDesktop))}></button>
             </div>
         </div>
     )

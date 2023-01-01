@@ -1,5 +1,9 @@
 import React from 'react';
-import DataHome from '../Data/DataHome';
+import DataHome from '../DataHome/DataHome';
+
+// const card = () => {
+
+// }
 
 export default function Features() {
     const card = (image, title, subTitle, text, key) => {

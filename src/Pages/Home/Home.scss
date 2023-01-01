@@ -1,0 +1,7 @@
+.home {
+    @import "./Intro/Intro.scss";
+    @import "./Features/Features.scss";
+    @import "./TopRated/TopRated.scss";
+    @import "./NewMovies/NewMovies.scss";
+    @import "../../Components/RowMoviesTv.js/RowMoviesTv.scss";
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import DataHome from '../Data/DataHome';
+import DataHome from '../DataHome/DataHome';
 
 export default function Intro() {
     return (

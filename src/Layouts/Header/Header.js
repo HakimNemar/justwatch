@@ -1,11 +1,25 @@
-import React from 'react';
-import Logo from '../../assets/img/logo.png';
-import loupe from '../../assets/img/loupe.svg';
+import React, { useEffect, useState } from 'react';
+import Logo from '../../Assets/Images/logo.png';
+import loupe from '../../Assets/Images/loupe.svg';
 import { Link } from 'react-router-dom';
 
 export default function Header() {
+    const [bgColorChange, setBgColorChange] = useState(false);
+
+    const listenScrollEvent = (event) => {
+        if (window.scrollY > (window.innerHeight * 0.85)) {
+            return setBgColorChange(true);
+        } else {
+            return setBgColorChange(false);
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', listenScrollEvent);
+    }, []);
+
     return (
-        <header>
+        <header className={bgColorChange ? ' bgDark' : ''}>
             <div className='head'>
                 <Link to="/"><img src={Logo} alt='Logo' /></Link>
 

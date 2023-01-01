@@ -32,7 +32,9 @@ body {
     }
 }
 
-@import "../Components/Header/Header.scss";
+@import "../Layouts/Header/Header.scss";
+@import "../Layouts/Footer/Footer.scss";
 
-@import "../Components/Pages/Home/Home.scss";
+@import "../Pages/Home/Home.scss";
+@import "../Pages/NotFound/NotFound.scss";
 // @import "../Components/Pages/New/New.scss";

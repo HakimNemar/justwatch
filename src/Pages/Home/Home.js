@@ -1,8 +1,8 @@
 import React from 'react';
 import Intro from './Intro/Intro';
 import Features from './Features/Features';
-import Top10 from './Top10/Top10';
-
+import TopRated from './TopRated/TopRated';
+import NewMovies from './NewMovies/NewMovies';
 
 export default function Home() {
     return (
@@ -12,7 +12,9 @@ export default function Home() {
 
             <Features />
 
-            <Top10 />
+            <TopRated />
+
+            <NewMovies />
 
         </div>
     )
