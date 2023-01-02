@@ -30,3 +30,13 @@ export const GetSpotlight = async () => {
     const request = await axios.get(TheMoviesDbRequests.fetchSpotlight);
     return request.data.results;
 }
+
+export const GetPopularMovies = async () => {
+    const request = await axios.get(TheMoviesDbRequests.fetchPopularMovies);
+    return request.data.results;
+}
+
+export const GetPopularTv = async () => {
+    const request = await axios.get(TheMoviesDbRequests.fetchPopularTv);
+    return request.data.results;
+}

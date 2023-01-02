@@ -5,6 +5,7 @@ import TopRated from './TopRated/TopRated';
 import NewMovies from './NewMovies/NewMovies';
 import NewTv from './NewTV/NewTv';
 import Spotlight from './Spotlight/Spotlight';
+import Popular from './Popular/Popular';
 
 export default function Home() {
     return (
@@ -21,6 +22,8 @@ export default function Home() {
             <NewTv />
 
             <Spotlight />
+
+            <Popular />
 
         </div>
     )
