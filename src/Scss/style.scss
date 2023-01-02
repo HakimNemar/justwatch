@@ -1,4 +1,4 @@
-@import "./utils/variables.scss";
+@import "./utils/Variables.scss";
 
 body {
     color: $text;
@@ -26,15 +26,35 @@ body {
         outline: none;
     }
 
+    .btn-plus-info {
+        background-color: $quaternary;
+        color: $primary;
+        padding: 10px 20px 10px 35px;
+        border-radius: 4px;
+        font-weight: 700;
+        width: fit-content;
+        background-image: url("../Assets/Images/info.svg");
+        background-repeat: no-repeat;
+        background-size: 15px;
+        background-position: left;
+        background-position: 15% 48%;
+    }
+
     h2 {
         font-size: 24px;
         color: $white;
     }
+
+    p {
+        line-height: 1.5;
+    }
+
+    @import "../Layouts/Header/Header.scss";
+    @import "../Layouts/Footer/Footer.scss";
+
+    @import "./utils/ButtonPrevNext.scss";
+
+    @import "../Pages/Home/Home.scss";
+    @import "../Pages/NotFound/NotFound.scss";
+    // @import "../Components/Pages/New/New.scss";
 }
-
-@import "../Layouts/Header/Header.scss";
-@import "../Layouts/Footer/Footer.scss";
-
-@import "../Pages/Home/Home.scss";
-@import "../Pages/NotFound/NotFound.scss";
-// @import "../Components/Pages/New/New.scss";

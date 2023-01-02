@@ -3,6 +3,7 @@ import Intro from './Intro/Intro';
 import Features from './Features/Features';
 import TopRated from './TopRated/TopRated';
 import NewMovies from './NewMovies/NewMovies';
+import NewTv from './NewTV/NewTv';
 
 export default function Home() {
     return (
@@ -15,6 +16,8 @@ export default function Home() {
             <TopRated />
 
             <NewMovies />
+
+            <NewTv />
 
         </div>
     )

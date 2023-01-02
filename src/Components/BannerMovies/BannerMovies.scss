@@ -1,0 +1,106 @@
+.banner-movies {
+    position: relative;
+    overflow: hidden;
+    width: 85%;
+    margin: 60px auto;
+
+    .slide {
+        display: flex;
+        transition: transform 0.5s;
+
+        li {
+            flex: 0 0 100%;
+            position: relative;
+
+            figure {
+                position: absolute;
+                margin: 0;
+                height: 100%;
+                z-index: -1;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    filter: opacity(0.1);
+                    border-radius: 25px;
+                }
+            }
+
+            .content {
+                padding: 78px;
+                display: flex;
+
+                .poster {
+                    width: 190px;
+                    margin-right: 35px;
+                    border-radius: 5px;
+                }
+
+                h3 {
+                    font-size: 24px;
+                    color: #c6c8cd;
+                    margin: 20px 0 10px;
+                }
+
+                .vote {
+                    display: flex;
+
+                    h4 {
+                        color: #78a6b8;
+                        font-size: 18px;
+                        font-weight: 400;
+                        margin: 0;
+                    }
+
+                    .imdb {
+                        width: 16px;
+                        margin-right: 5px;
+                        align-self: center;
+                    }
+                }
+
+                p {
+                    color: #8a8d98;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    &:hover {
+        .prev,
+        .next {
+            opacity: 1;
+        }
+    }
+
+    .prev,
+    .next {
+        background-color: transparent;
+    }
+
+    .index {
+        position: absolute;
+        display: flex;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: max-content;
+
+        li {
+            width: 8px;
+            height: 8px;
+            margin: 20px 4px;
+            border-radius: 50%;
+            background-color: $white;
+            opacity: 0.3;
+        }
+
+        .active {
+            background-color: $quaternary;
+            opacity: 1;
+        }
+    }
+}

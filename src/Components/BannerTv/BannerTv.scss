@@ -1,0 +1,59 @@
+.banner-tv {
+    width: 85%;
+    margin: 60px auto;
+
+    ul {
+        display: flex;
+
+        li {
+            display: flex;
+            flex: 0 1 50%;
+            position: relative;
+            padding: 50px;
+
+            &:first-child {
+                margin-right: 50px;
+            }
+
+            figure {
+                height: 100%;
+                position: absolute;
+                margin: 0;
+                left: 0;
+                top: 0;
+                z-index: -1;
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    filter: opacity(0.2);
+                    border-radius: 20px;
+                }
+            }
+
+            .content {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                img {
+                    width: 48px;
+                    height: 48px;
+                    border-radius: 20%;
+                    margin-bottom: 100px;
+                }
+
+                h3 {
+                    font-size: 40px;
+                    color: $white;
+                    margin: 0;
+                }
+
+                p {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

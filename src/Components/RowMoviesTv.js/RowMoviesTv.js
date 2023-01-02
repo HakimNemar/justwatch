@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 export default function RowMoviesTv({ title, text, withIndex, moviesData }) {
-    const [index, setIndex] = useState(0),
-        currentSlide = useRef(null),
-        currentSlideLi = useRef(null),
-        slideLi = document.querySelector(".slide li"),
-        nbrLiForDesktop = withIndex ? 3 : 5;
+    const [index, setIndex] = useState(0);
+    const currentSlide = useRef(null);
+    const currentSlideLi = useRef(null);
+    const slideLi = document.querySelector(".slide li");
+    const nbrLiForDesktop = withIndex ? 3 : 5;
 
     useEffect(() => {
         if (currentSlideLi) {

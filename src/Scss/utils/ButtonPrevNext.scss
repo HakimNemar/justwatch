@@ -1,0 +1,48 @@
+.prev,
+.next {
+    position: absolute;
+    width: 40px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: rgba(6, 13, 23, 0.8);
+    opacity: 0;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 12px;
+        height: 12px;
+        margin: auto;
+        border: 3px solid $blue;
+        transition: 0.2s all;
+        transform: rotate(45deg);
+    }
+
+    &:hover {
+        &::before {
+            border-color: $white;
+            transform: rotate(45deg) scale(1.2);
+        }
+    }
+}
+
+.prev {
+    &::before {
+        border-right: none;
+        border-top: none;
+    }
+}
+
+.next {
+    right: 0;
+
+    &::before {
+        border-left: none;
+        border-bottom: none;
+    }
+}
