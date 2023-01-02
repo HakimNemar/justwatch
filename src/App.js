@@ -5,6 +5,7 @@ import Home from './Pages/Home/Home';
 import New from './Pages/New/new';
 import NotFound from './Pages/NotFound/NotFound';
 import Footer from './Layouts/Footer/Footer';
+import Popular from './Pages/Popular/Popular';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/new" element={<New />} />
+        <Route exact path="/popular" element={<Popular />} />
         <Route exact path='*' element={<NotFound />} />
       </Routes>
 

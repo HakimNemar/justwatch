@@ -5,7 +5,7 @@ import TopRated from './TopRated/TopRated';
 import NewMovies from './NewMovies/NewMovies';
 import NewTv from './NewTV/NewTv';
 import Spotlight from './Spotlight/Spotlight';
-import Popular from './Popular/Popular';
+import PopularSlide from './PopularSlide/PopularSlide';
 
 export default function Home() {
     return (
@@ -23,7 +23,7 @@ export default function Home() {
 
             <Spotlight />
 
-            <Popular />
+            <PopularSlide />
 
         </div>
     )

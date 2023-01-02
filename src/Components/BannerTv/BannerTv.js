@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from 'react'
-import { GetTrending } from '../../Services/TheMoviesDbApi';
+import { GetTrendingTv } from '../../Services/TheMoviesDbApi';
 import DataHome from '../../Pages/Home/DataHome/DataHome';
 
 export default function BannerTv() {
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
-        GetTrending().then(movies => {
+        GetTrendingTv().then(movies => {
             setMovies(movies);
         });
     }, []);
 
     return (
         <div className='banner-tv'>
+            <h2>Nouvelles séries</h2>
             <ul>
                 {movies.map((movie, key) => {
                     if (key < 2) {

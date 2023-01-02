@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import RowMoviesTv from '../../../Components/RowMoviesTv.js/RowMoviesTv';
 import { GetPopularMovies, GetPopularTv } from '../../../Services/TheMoviesDbApi';
 
-export default function Popular() {
+export default function PopularSlide() {
     const [moviesData, setMoviesData] = useState([]);
     const [tvData, setTvData] = useState([]);
 
@@ -16,7 +16,7 @@ export default function Popular() {
     }, []);
 
     return (
-        <section className='popular'>
+        <section className='popular-slide'>
             <RowMoviesTv
                 title="Films populaires"
                 text="Découvrez les films les plus populaires en ce moment et où les regarder."

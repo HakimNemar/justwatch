@@ -3,7 +3,7 @@
     padding-inline-start: 7.5vw;
     margin: auto;
     position: relative;
-    margin: 80px 0;
+    margin: 120px 0;
 
     .description {
         min-width: 190px;
@@ -24,7 +24,7 @@
         ul {
             display: flex;
             position: relative;
-            transition: transform 0.5s;
+            transition: transform 0.7s ease-in-out;
             width: 100%;
 
             li {

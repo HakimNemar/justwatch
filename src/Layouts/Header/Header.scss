@@ -6,6 +6,8 @@ header {
     left: 0;
     right: 0;
     z-index: 99;
+    max-width: 1638px;
+    margin: auto;
 
     .head {
         display: flex;
@@ -43,7 +45,7 @@ header {
                     background-color: $secondary;
                     line-height: 30px;
                     border: none;
-                    width: 350px;
+                    width: 320px;
                     box-shadow: none;
                     transition: all 0.3s;
 
@@ -67,6 +69,7 @@ header {
                     color: $white;
                     border-radius: 4px;
                     padding: 10px 15px;
+                    font-size: 14px;
                 }
             }
         }

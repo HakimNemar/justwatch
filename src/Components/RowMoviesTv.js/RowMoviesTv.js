@@ -5,7 +5,7 @@ export default function RowMoviesTv({ title, text, withIndex, moviesData }) {
     const currentSlide = useRef(null);
     const currentSlideLi = useRef(null);
     const slideLi = document.querySelector(".slide li");
-    const nbrLiForDesktop = withIndex ? 3 : 5;
+    const nbrLiForDesktop = withIndex ? 5 : 7;
 
     useEffect(() => {
         if (currentSlideLi) {

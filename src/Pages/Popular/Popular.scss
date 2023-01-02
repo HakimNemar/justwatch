@@ -1,0 +1,50 @@
+.popular {
+    margin: 90px auto auto;
+    max-width: 1638px;
+    padding-left: 65px;
+    padding-right: 65px;
+
+    .content {
+        height: 138px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: height 0.3s;
+        position: relative;
+
+        h2 {
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        span {
+            position: absolute;
+            width: 100%;
+            height: 30px;
+            background-color: red;
+            bottom: 0;
+            background: linear-gradient(transparent, $background);
+        }
+    }
+
+    .movies {
+        margin-top: 50px;
+
+        ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+            grid-gap: 15px;
+
+            li {
+                flex: 0 0 (100%/6);
+
+                img {
+                    width: 100%;
+                    border-radius: 8px;
+                }
+            }
+        }
+    }
+}

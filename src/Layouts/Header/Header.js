@@ -28,7 +28,7 @@ export default function Header() {
                         <Link to="/new">Nouveautés</Link>
                     </li>
                     <li>
-                        <Link to="/new">Populaire</Link>
+                        <Link to="/popular">Populaires</Link>
                     </li>
                     <li>
                         <Link to="/new">Sports</Link>

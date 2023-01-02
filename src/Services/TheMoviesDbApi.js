@@ -16,14 +16,19 @@ export const GetTrending = async () => {
     return request.data.results.slice(0, 7);
 }
 
+export const GetTrendingTv = async () => {
+    const request = await axios.get(TheMoviesDbRequests.fetchTrendingTv);
+    return request.data.results.slice(0, 7);
+}
+
 export const GetNewMovies = async () => {
-    const request = await axios.get(TheMoviesDbRequests.fetchTopRatedMovies);
-    return request.data.results.slice(10, 30);
+    const request = await axios.get(TheMoviesDbRequests.fetchNewMovies);
+    return request.data.results;
 }
 
 export const GetNewTv = async () => {
-    const request = await axios.get(TheMoviesDbRequests.fetchTopRatedTv);
-    return request.data.results.slice(10, 30);
+    const request = await axios.get(TheMoviesDbRequests.fetchNewTv);
+    return request.data.results;
 }
 
 export const GetSpotlight = async () => {
@@ -39,4 +44,9 @@ export const GetPopularMovies = async () => {
 export const GetPopularTv = async () => {
     const request = await axios.get(TheMoviesDbRequests.fetchPopularTv);
     return request.data.results;
+}
+
+export const GetAllMovies = async () => {
+    const request = await axios.get(TheMoviesDbRequests.fetchAllMovies);
+    return request.data;
 }
