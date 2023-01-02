@@ -25,3 +25,8 @@ export const GetNewTv = async () => {
     const request = await axios.get(TheMoviesDbRequests.fetchTopRatedTv);
     return request.data.results.slice(10, 30);
 }
+
+export const GetSpotlight = async () => {
+    const request = await axios.get(TheMoviesDbRequests.fetchSpotlight);
+    return request.data.results;
+}

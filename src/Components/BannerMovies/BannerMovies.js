@@ -26,15 +26,15 @@ export default function BannerMovies() {
                 currentSlide.current.style.transform = `translateX(${(-currentSlideLi.clientWidth) * currentIndex}px)`;
             }
         }
-
-        setTimeout(() => {
-            if (currentIndex < currentSlide.current.children.length - 1) {
-                setCurrentIndex(currentIndex + 1);
-            } else {
-                setCurrentIndex(0);
-            }
-        }, 3000);
     }, [movies, currentIndex, currentSlideLi]);
+
+    // setTimeout(() => {
+    //     if (currentIndex < currentSlide.current.children.length - 1) {
+    //         setCurrentIndex(currentIndex + 1);
+    //     } else {
+    //         setCurrentIndex(0);
+    //     }
+    // }, 3000);
 
     return (
         <div className='banner-movies'>
@@ -54,6 +54,7 @@ export default function BannerMovies() {
                                         <h4>{mathArround(movie.vote_average)} ({movie.vote_count})</h4>
                                     </div>
                                     <p>{movie.overview}</p>
+                                    <button className='btn-plus-info'>Plus d'infos</button>
                                 </div>
                             </div>
                         </li>

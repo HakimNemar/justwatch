@@ -1,0 +1,50 @@
+.spotlight {
+    width: 85%;
+    margin: auto;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+
+    .row-movies-tv {
+        margin: 0px 60px 60px 60px;
+        padding: 0;
+
+        li {
+            padding-left: 10px !important;
+            padding-right: 10px !important;
+        }
+    }
+
+    .title {
+        padding: 65px 65px 0 65px;
+
+        .provider {
+            width: 100px;
+            height: 100px;
+            border-radius: 20px;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: $white;
+            margin-top: 100px;
+        }
+    }
+
+    figure {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        filter: opacity(0.5);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}

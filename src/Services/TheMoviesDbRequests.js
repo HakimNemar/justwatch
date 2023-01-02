@@ -5,6 +5,7 @@ const Requests = {
     fetchTrending: `${BASE_URL}/trending/all/week?api_key=${API_KEY}`,
     fetchTopRatedMovies: `${BASE_URL}/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1&total_results=50`,
     fetchTopRatedTv: `${BASE_URL}/tv/top_rated?api_key=${API_KEY}&language=en-US&page=1`,
+    fetchSpotlight: `${BASE_URL}/movie/top_rated?api_key=${API_KEY}&language=en-US&page=2`,
     fetchActionMovies: `${BASE_URL}/discover/movie?api_key=${API_KEY}&width_genres=28`,
     fetchComedyMovies: `${BASE_URL}/discover/movie?api_key=${API_KEY}&width_genres=52`,
     fetchHorrorMovies: `${BASE_URL}/discover/movie?api_key=${API_KEY}&width_genres=27`,

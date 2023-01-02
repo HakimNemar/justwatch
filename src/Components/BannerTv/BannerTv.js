@@ -30,7 +30,7 @@ export default function BannerTv() {
                             </li>
                         )
                     } else {
-                        return <></>
+                        return false;
                     }
                 })}
             </ul>

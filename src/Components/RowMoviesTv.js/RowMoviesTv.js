@@ -22,10 +22,13 @@ export default function RowMoviesTv({ title, text, withIndex, moviesData }) {
 
     return (
         <div className='row-movies-tv'>
-            <div className='description'>
-                <h2>{title}</h2>
-                <p>{text}</p>
-            </div>
+            {
+                (title && text) &&
+                <div className='description'>
+                    <h2>{title}</h2>
+                    <p>{text}</p>
+                </div>
+            }
 
             <div className='carousel'>
                 <ul className='slide' ref={currentSlide}>
