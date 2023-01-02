@@ -1,6 +1,10 @@
 import axios from 'axios';
 import TheMoviesDbRequests from './TheMoviesDbRequests';
 
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const sortBy = urlParams.get('sort_by');
+
 export const GetTopRatedMovies = async () => {
     const request = await axios.get(TheMoviesDbRequests.fetchTopRatedMovies);
     return request.data.results.slice(0, 10);
@@ -46,7 +50,9 @@ export const GetPopularTv = async () => {
     return request.data.results;
 }
 
-export const GetAllMovies = async () => {
-    const request = await axios.get(TheMoviesDbRequests.fetchAllMovies);
+export const GetAllMovies = async (page) => {
+    const url = 'https://api.themoviedb.org/3/discover/movie';
+    const key = 'e1ca3f6b7436f2fbf633fe133af42ae0';
+    const request = await axios.get(`${url}?api_key=${key}&page=${(page === null ? '1' : page)}&sort_by=${(sortBy === null ? 'popularity.desc' : sortBy)}`);
     return request.data;
 }

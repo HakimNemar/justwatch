@@ -4,7 +4,7 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const numberPage = urlParams.get('page');
 
-const Requests = {
+const TheMoviesDbRequests = {
     fetchTrending: `${BASE_URL}/trending/all/week?api_key=${API_KEY}`,
     fetchTrendingTv: `${BASE_URL}/trending/tv/week?api_key=${API_KEY}`,
 
@@ -29,4 +29,4 @@ const Requests = {
     fetchSpotlight: `${BASE_URL}/movie/top_rated?api_key=${API_KEY}&language=en-US&page=5`,
 }
 
-export default Requests;
+export default TheMoviesDbRequests;

@@ -1,0 +1,11 @@
+.sort {
+    button {
+        background-color: $secondary;
+        padding: 10px 15px;
+        margin: 0 10px;
+
+        &:hover {
+            background-color: $tertiaire;
+        }
+    }
+}
