@@ -24,32 +24,19 @@ export default function ListOfMovies() {
     // si on arrive en bas de la page
     useEffect(() => {
         window.addEventListener("scroll", () => {
-            if ((window.innerHeight + window.pageYOffset) >= (document.body.offsetHeight - 100)) {
-                setIsEndOfPage(true);
-            } else {
-                setIsEndOfPage(false);
-            }
+            setIsEndOfPage((window.innerHeight + window.pageYOffset) >= (document.body.offsetHeight - 100));
         });
     }, [movies]);
 
     // isEndOfPage est true donc un get une nouvelle fois l'api pour recuperer la page suivant avec numberOfPage et on append le resultat a ul
     useEffect(() => {
-        if (isEndOfPage) {
-            const ul = document.querySelector('.popular .movies ul');
-
-            if (numberOfPage + 1 < totalPages) {
-                GetAllMovies(numberOfPage + 1).then(movies => {
-                    setNumberOfPage(movies.page);
-
-                    movies.results.map((movie, key) => {
-                        let li = document.createElement("li");
-                        li.innerHTML = `<img id=${key} src='${BASE_URL_IMG}${movie.poster_path}' alt=${movie.title} />`;
-                        return ul.appendChild(li);
-                    });
-                });
-            }
+        if (isEndOfPage && (numberOfPage + 1 < totalPages)) {
+            GetAllMovies(numberOfPage + 1).then(moviesNext => {
+                setNumberOfPage(moviesNext.page);
+                setMovies(movies.concat(moviesNext.results));
+            });
         }
-    }, [isEndOfPage, numberOfPage, totalPages]);
+    }, [isEndOfPage, numberOfPage, totalPages, movies]);
 
     return (
         <div className='movies'>
