@@ -1,4 +1,4 @@
-.row-movies-tv {
+.carousel-movies-tv {
     display: flex;
     padding-inline-start: 7.5vw;
     margin: auto;
@@ -29,22 +29,25 @@
 
             li {
                 position: relative;
-                display: flex;
-                justify-content: center;
 
-                p {
-                    font-size: 180px;
-                    font-weight: 700;
-                    letter-spacing: -20px;
-                    margin: 0;
-                    color: #222c38;
-                    line-height: 100%;
-                    align-self: flex-end;
-                }
+                a {
+                    display: flex;
+                    justify-content: center;
 
-                img {
-                    width: 185px;
-                    border-radius: 5px;
+                    p {
+                        font-size: 180px;
+                        font-weight: 700;
+                        letter-spacing: -20px;
+                        margin: 0;
+                        color: #222c38;
+                        line-height: 100%;
+                        align-self: flex-end;
+                    }
+
+                    img {
+                        width: 185px;
+                        border-radius: 5px;
+                    }
                 }
             }
         }

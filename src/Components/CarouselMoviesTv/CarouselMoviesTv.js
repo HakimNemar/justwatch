@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
-export default function RowMoviesTv({ title, text, withIndex, moviesData }) {
+export default function CarouselMoviesTv({ title, text, withIndex, moviesData }) {
     const [index, setIndex] = useState(0);
     const currentSlide = useRef(null);
     const currentSlideLi = useRef(null);
@@ -8,10 +9,8 @@ export default function RowMoviesTv({ title, text, withIndex, moviesData }) {
     const nbrLiForDesktop = withIndex ? 5 : 7;
 
     useEffect(() => {
-        if (currentSlideLi) {
-            if (index < moviesData.length) {
-                currentSlide.current.style.transform = `translateX(${(-currentSlideLi.current.clientWidth) * index}px)`;
-            }
+        if (currentSlideLi && (index < moviesData.length)) {
+            currentSlide.current.style.transform = `translateX(${(-currentSlideLi.current.clientWidth) * index}px)`;
         }
     }, [index, moviesData.length, slideLi]);
 
@@ -21,7 +20,7 @@ export default function RowMoviesTv({ title, text, withIndex, moviesData }) {
     }
 
     return (
-        <div className='row-movies-tv'>
+        <div className='carousel-movies-tv'>
             {
                 (title && text) &&
                 <div className='description'>
@@ -35,16 +34,17 @@ export default function RowMoviesTv({ title, text, withIndex, moviesData }) {
                     {moviesData.map((movie, key) => {
                         return (
                             <li key={key} style={styleNumberLi} ref={currentSlideLi}>
-                                {withIndex &&
-                                    <p>{key + 1}</p>
-                                }
-                                <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
+                                <Link to={`/movie/${movie.id}`}>
+                                    {withIndex &&
+                                        <p>{key + 1}</p>
+                                    }
+                                    <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
+                                </Link>
                             </li>
                         )
                     })}
                 </ul>
 
-                {/* <button className='prev' onClick={() => (index > (0 + (nbrLiForDesktop - 1)) && setIndex(index - nbrLiForDesktop))}></button> */}
                 <button className='prev' onClick={() => (index > 0 && setIndex(index - nbrLiForDesktop))}></button>
                 <button className='next' onClick={() => (index < (moviesData.length - nbrLiForDesktop) && setIndex(index + nbrLiForDesktop))}></button>
             </div>

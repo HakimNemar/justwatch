@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import RowMoviesTv from '../../../Components/RowMoviesTv.js/RowMoviesTv';
+import CarouselMoviesTv from '../../../Components/CarouselMoviesTv/CarouselMoviesTv';
 import DataHome from '../../../Pages/Home/DataHome/DataHome';
 import spotlight from '../../../Assets/Images/spotlight-default.jpeg';
 import { GetSpotlight } from '../../../Services/TheMoviesDbApi';
@@ -21,7 +21,7 @@ export default function Spotlight() {
                 <h1>Les coups de cœur sélectionnés par Apple TV Plus pour vous</h1>
             </div>
 
-            <RowMoviesTv moviesData={moviesData} />
+            <CarouselMoviesTv moviesData={moviesData} />
 
             <figure>
                 {moviesData[0] ?

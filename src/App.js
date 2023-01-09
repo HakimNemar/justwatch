@@ -6,6 +6,7 @@ import New from './Pages/New/new';
 import NotFound from './Pages/NotFound/NotFound';
 import Footer from './Layouts/Footer/Footer';
 import Popular from './Pages/Popular/Popular';
+import MovieDetails from './Pages/MovieDetails/MovieDetails';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route exact path="/new" element={<New />} />
         <Route exact path="/popular" element={<Popular />} />
+        <Route exact path="/movie/:id" element={<MovieDetails />} />
         <Route exact path='*' element={<NotFound />} />
       </Routes>
 
